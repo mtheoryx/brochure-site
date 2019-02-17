@@ -29,8 +29,19 @@ const Navigation = ({ className }) => (
 );
 
 const StyledNavigation = styled(Navigation)`
+  a {
+    text-transform: uppercase;
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
   a.active {
     color: red;
+    text-decoration: underline;
   }
 `;
 
