@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledNavigation from '../components/Navigation';
 
-const ContactPage = () => (
+const QualityPage = () => (
   <div>
-    <h1>Contact</h1>
+    <h1>Quality</h1>
     <StyledNavigation />
   </div>
 );
 
-export default ContactPage;
+export default QualityPage;

@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledNavigation from '../components/Navigation';
 
-const AboutPage = () => (
+const WhoWeArePage = () => (
   <div>
-    <h1>About the world!</h1>
+    <h1>Who we are</h1>
     <StyledNavigation />
   </div>
 );
 
-export default AboutPage;
+export default WhoWeArePage;

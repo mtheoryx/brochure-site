@@ -7,21 +7,41 @@ const Navigation = ({ className }) => (
     <Link to="/" activeClassName="active">
       Home
     </Link>
+    <Link to="/who-we-are/" activeClassName="active">
+      Who we are
+    </Link>
+    <Link to="/what-we-do/" activeClassName="active">
+      What we do
+    </Link>
     <Link to="/projects/" activeClassName="active">
       Projects
     </Link>
-    <Link to="/about/" activeClassName="active">
-      About
+    <Link to="/safety/" activeClassName="active">
+      Safety
     </Link>
-    <Link to="/contact/" activeClassName="active">
+    <Link to="/quality/" activeClassName="active">
+      Quality
+    </Link>
+    <Link to="/contact-us/" activeClassName="active">
       Contact
     </Link>
   </nav>
 );
 
 const StyledNavigation = styled(Navigation)`
+  a {
+    text-transform: uppercase;
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
   a.active {
     color: red;
+    text-decoration: underline;
   }
 `;
 
