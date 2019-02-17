@@ -11,7 +11,6 @@ const IndexPage = () => (
   <div>
     <h1>{content.company}</h1>
     <StyledNavigation />
-    Are we production with correct env? {process.env.NODE_ENV}
   </div>
 );
 
