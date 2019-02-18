@@ -1,6 +1,7 @@
 import React from 'react';
 import StyledNavigation from '../components/Navigation';
 import ContextContent from '../data/context-content';
+import PageLayout from '../components/Layout';
 
 const content =
   process.env.NODE_ENV !== 'production'
@@ -8,13 +9,13 @@ const content =
     : ContextContent.prod;
 
 const Header = () => (
-  <div class="header">
+  <div class="header" style={{ border: '1px solid #ccc' }}>
     <div>Header Image</div>
   </div>
 );
 
 const PageContent = () => (
-  <div className="page">
+  <div className="page" style={{ border: '1px solid #ccc' }}>
     <div className="page-hero">
       <h1>{content.company}</h1>
     </div>
@@ -36,14 +37,18 @@ const PageContent = () => (
   </div>
 );
 
-const Footer = () => <div className="footer">I'm a footer</div>;
+const Footer = () => (
+  <div className="footer" style={{ border: '1px solid #ccc' }}>
+    I'm a footer, yo
+  </div>
+);
 const IndexPage = () => (
-  <div>
+  <PageLayout>
     <Header />
     <StyledNavigation />
     <PageContent />
     <Footer />
-  </div>
+  </PageLayout>
 );
 
 export default IndexPage;
