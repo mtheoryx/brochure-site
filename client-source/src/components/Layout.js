@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Layout = ({ className, children }) => (
-  <div className={className}>{children}</div>
-);
-
-const PageLayout = styled(Layout)`
+const StyledLayout = styled.div`
   margin: 2rem auto;
-  max-width: 750px;
-  /* TODO Flex/Grid layout */
+  max-width: 600px;
 `;
+
+const PageLayout = ({ children }) => <StyledLayout>{children}</StyledLayout>;
 
 export default PageLayout;

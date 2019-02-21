@@ -2,17 +2,13 @@ import React from 'react';
 import StyledNavigation from '../components/Navigation';
 import ContextContent from '../data/context-content';
 import PageLayout from '../components/Layout';
+import StyledHeader from '../components/Header';
+import Footer from '../components/Footer';
 
 const content =
   process.env.NODE_ENV !== 'production'
     ? ContextContent.demo
     : ContextContent.prod;
-
-const Header = () => (
-  <div class="header" style={{ border: '1px solid #ccc' }}>
-    <div>Header Image</div>
-  </div>
-);
 
 const PageContent = () => (
   <div className="page" style={{ border: '1px solid #ccc' }}>
@@ -37,14 +33,9 @@ const PageContent = () => (
   </div>
 );
 
-const Footer = () => (
-  <div className="footer" style={{ border: '1px solid #ccc' }}>
-    I'm a footer, yo
-  </div>
-);
 const IndexPage = () => (
   <PageLayout>
-    <Header />
+    <StyledHeader />
     <StyledNavigation />
     <PageContent />
     <Footer />
