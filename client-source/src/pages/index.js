@@ -1,19 +1,26 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
+
 import StyledNavigation from '../components/Navigation';
 import ContextContent from '../data/context-content';
 import PageLayout from '../components/Layout';
 import StyledHeader from '../components/Header';
 import Footer from '../components/Footer';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const content =
   process.env.NODE_ENV !== 'production'
     ? ContextContent.demo
     : ContextContent.prod;
 
-const PageContent = () => (
-  <div className="page" style={{ border: '1px solid #ccc' }}>
+const PageContent = ({ heroImage }) => (
+  <div className="page">
     <div className="page-hero">
       <h1>{content.company}</h1>
+      <Img fluid={heroImage} />
     </div>
     <div className="page-content">
       <p>
@@ -33,13 +40,42 @@ const PageContent = () => (
   </div>
 );
 
-const IndexPage = () => (
+const StyledPageContent = styled(PageContent)`
+  border: '1px solid #ccc';
+`;
+
+const IndexPage = ({ data }) => (
   <PageLayout>
     <StyledHeader />
     <StyledNavigation />
-    <PageContent />
+    <StyledPageContent
+      heroImage={
+        isProd
+          ? data.prodHero.childImageSharp.fluid
+          : data.demoHero.childImageSharp.fluid
+      }
+    />
     <Footer />
   </PageLayout>
 );
+
+export const query = graphql`
+  query {
+    demoHero: file(relativePath: { eq: "home-hero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    prodHero: file(relativePath: { eq: "prod-home-hero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
