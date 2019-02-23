@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = ({ className }) => (
+const BaseHeader = ({ className }) => (
   <div className={className}>
     <div>Header Image Placeholder</div>
   </div>
 );
 
-const StyledHeader = styled(Header)`
+const Header = styled(BaseHeader)`
   border: 1px solid red;
 `;
 
-export default StyledHeader;
+export default Header;

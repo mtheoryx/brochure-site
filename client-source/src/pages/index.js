@@ -3,11 +3,8 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import StyledNavigation from '../components/Navigation';
 import ContextContent from '../data/context-content';
 import PageLayout from '../components/Layout';
-import StyledHeader from '../components/Header';
-import Footer from '../components/Footer';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -36,6 +33,12 @@ const PageContent = ({ heroImage }) => (
         my espresso machine? You know what? It is beets. I've crashed into a
         beet truck.
       </p>
+      <p>
+        I gave it a cold? I gave it a virus. A computer virus. I gave it a cold?
+        I gave it a virus. A computer virus. You know what? It is beets. I've
+        crashed into a beet truck. God creates dinosaurs. God destroys
+        dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
+      </p>
     </div>
   </div>
 );
@@ -46,8 +49,6 @@ const StyledPageContent = styled(PageContent)`
 
 const IndexPage = ({ data }) => (
   <PageLayout>
-    <StyledHeader />
-    <StyledNavigation />
     <StyledPageContent
       heroImage={
         isProd
@@ -55,7 +56,6 @@ const IndexPage = ({ data }) => (
           : data.demoHero.childImageSharp.fluid
       }
     />
-    <Footer />
   </PageLayout>
 );
 

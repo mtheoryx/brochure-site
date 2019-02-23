@@ -1,8 +1,5 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
 import PageLayout from '../components/Layout';
-import StyledHeader from '../components/Header';
-import Footer from '../components/Footer';
 
 const PageContent = () => (
   <div>
@@ -12,10 +9,7 @@ const PageContent = () => (
 
 const ProjectPage = () => (
   <PageLayout>
-    <StyledHeader />
-    <StyledNavigation />
     <PageContent />
-    <Footer />
   </PageLayout>
 );
 
