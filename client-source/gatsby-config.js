@@ -1,12 +1,19 @@
 const path = require(`path`);
 
+const isStream = process.env.GATSBY_IS_STREAM === 'true';
+
 module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
+        path: path.join(
+          __dirname,
+          `src`,
+          `images`,
+          `${isStream ? 'stream' : 'client'}`
+        )
       }
     },
     `gatsby-plugin-styled-components`,

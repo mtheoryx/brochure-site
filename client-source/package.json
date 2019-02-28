@@ -30,8 +30,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build:stream": "cross-env GATSBY_IS_STREAM='true' npm run build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "start:stream": "cross-env GATSBY_IS_STREAM='true' npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -41,5 +44,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
