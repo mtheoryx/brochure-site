@@ -2,16 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-
-import ContextContent from '../data/context-content';
 import PageLayout from '../components/Layout';
 
-const content =
-  process.env.GATSBY_IS_STREAM === 'true'
-    ? ContextContent.stream
-    : ContextContent.client;
-
-const PageContent = ({ heroImage, className }) => (
+const PageContent = ({ heroImage, className, content }) => (
   <div className={className}>
     <div className="page-hero">
       <h1>{content.company}</h1>
@@ -30,9 +23,12 @@ const StyledPageContent = styled(PageContent)`
   border: '1px solid #ccc';
 `;
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, content }) => (
   <PageLayout>
-    <StyledPageContent heroImage={data.file.childImageSharp.fluid} />
+    <StyledPageContent
+      heroImage={data.file.childImageSharp.fluid}
+      content={content}
+    />
   </PageLayout>
 );
 
