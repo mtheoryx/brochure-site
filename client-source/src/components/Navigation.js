@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const Navigation = ({ className }) => (
+const BaseNavigation = ({ className }) => (
   <nav className={className}>
     <Link to="/" activeClassName="active">
       Home
@@ -28,7 +28,7 @@ const Navigation = ({ className }) => (
   </nav>
 );
 
-const StyledNavigation = styled(Navigation)`
+const Navigation = styled(BaseNavigation)`
   a {
     text-transform: uppercase;
     margin-right: 10px;
@@ -45,4 +45,4 @@ const StyledNavigation = styled(Navigation)`
   }
 `;
 
-export default StyledNavigation;
+export default Navigation;

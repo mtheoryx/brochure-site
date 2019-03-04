@@ -1,11 +1,16 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
+import PageLayout from '../components/Layout';
 
-const ContactUsPage = () => (
+const PageContent = () => (
   <div>
     <h1>Contact Us</h1>
-    <StyledNavigation />
   </div>
+);
+
+const ContactUsPage = () => (
+  <PageLayout>
+    <PageContent />
+  </PageLayout>
 );
 
 export default ContactUsPage;

@@ -1,11 +1,16 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
+import PageLayout from '../components/Layout';
 
-const SafetyPage = () => (
+const PageContent = () => (
   <div>
     <h1>Safety</h1>
-    <StyledNavigation />
   </div>
+);
+
+const SafetyPage = () => (
+  <PageLayout>
+    <PageContent />
+  </PageLayout>
 );
 
 export default SafetyPage;

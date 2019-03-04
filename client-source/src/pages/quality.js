@@ -1,11 +1,16 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
+import PageLayout from '../components/Layout';
 
-const QualityPage = () => (
+const PageContent = () => (
   <div>
     <h1>Quality</h1>
-    <StyledNavigation />
   </div>
+);
+
+const QualityPage = () => (
+  <PageLayout>
+    <PageContent />
+  </PageLayout>
 );
 
 export default QualityPage;

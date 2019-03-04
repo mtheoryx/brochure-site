@@ -1,11 +1,16 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
+import PageLayout from '../components/Layout';
 
-const WhatWeDoPage = () => (
+const PageContent = () => (
   <div>
     <h1>What we do</h1>
-    <StyledNavigation />
   </div>
+);
+
+const WhatWeDoPage = () => (
+  <PageLayout>
+    <PageContent />
+  </PageLayout>
 );
 
 export default WhatWeDoPage;

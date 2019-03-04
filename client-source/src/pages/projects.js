@@ -1,10 +1,16 @@
 import React from 'react';
-import StyledNavigation from '../components/Navigation';
-const ProjectPage = () => (
+import PageLayout from '../components/Layout';
+
+const PageContent = () => (
   <div>
     <h1>Projects</h1>
-    <StyledNavigation />
   </div>
+);
+
+const ProjectPage = () => (
+  <PageLayout>
+    <PageContent />
+  </PageLayout>
 );
 
 export default ProjectPage;
