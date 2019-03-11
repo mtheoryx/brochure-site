@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 import StreamContext from '../data/stream-content';
@@ -11,14 +10,13 @@ const isStream = process.env.GATSBY_IS_STREAM === 'true';
 const content = isStream ? StreamContext : DataContext;
 
 const StyledLayout = styled.div`
-  margin: 2rem auto;
-  /* max-width: 600px; */
+  margin: 0 auto;
+  width: 98vw;
 `;
 
 const PageLayout = ({ children }) => (
   <StyledLayout content={content}>
-    <Navigation />
-    <Header />
+    <Header content={content} />
     {React.cloneElement(children, { content })}
     <Footer />
   </StyledLayout>
