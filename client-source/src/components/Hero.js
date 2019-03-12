@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const BaseHero = ({ heroImage, className, content }) => (
   <div className={className}>
     <h1>{content}</h1>
-
-    <Img fluid={heroImage} />
+    {heroImage && <Img fluid={heroImage} />}
   </div>
 );
 
