@@ -1,15 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import PageLayout from '../components/Layout';
 
-const PageContent = () => (
-  <div>
-    <h1>Contact Us</h1>
+const PageContent = ({ className, content }) => (
+  <div className={className}>
+    <h1>{content.contact.heading}</h1>
+    <div className="page-content">
+      {content.contact.bodyText.map((text, index) => (
+        <p key={index}>{text}</p>
+      ))}
+    </div>
   </div>
 );
 
-const ContactUsPage = () => (
+const StyledPageContent = styled(PageContent)`
+  border: '1px solid #ccc';
+`;
+
+const ContactUsPage = ({ content }) => (
   <PageLayout>
-    <PageContent />
+    <StyledPageContent content={content} />
   </PageLayout>
 );
 

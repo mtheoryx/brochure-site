@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import PageLayout from '../components/Layout';
 import HeroHeader from '../components/Hero';
 

@@ -8,7 +8,7 @@ const BaseLogo = ({ className }) => (
   <div className={className}>Header Logo</div>
 );
 
-const Logo = styled(BaseLogo)``;
+// const Logo = styled(BaseLogo)``;
 
 const BaseSiteMeta = ({ className, content }) => (
   <div className={className}>
