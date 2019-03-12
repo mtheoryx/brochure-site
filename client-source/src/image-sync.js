@@ -10,7 +10,7 @@ const imgProvider = 'https://via.placeholder.com';
 const fileNames = fs.readdirSync(
   `${__dirname}/images/client`,
   (_, items) => items
-);
+).filter(f => f !== '.DS_Store');
 
 // What does a URL look like? Like this:
 // https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com

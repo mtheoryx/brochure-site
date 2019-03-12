@@ -1,37 +1,43 @@
 import React from 'react';
+import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import PageLayout from '../components/Layout';
+import HeroHeader from '../components/Hero';
 
-const PageContent = () => (
-  <div>
-    <h1>Who we are</h1>
-    <p>
-      What do they got in there? King Kong? Remind me to thank John for a lovely
-      weekend. God creates dinosaurs. God destroys dinosaurs. God creates Man.
-      Man destroys God. Man creates Dinosaurs. Yeah, but your scientists were so
-      preoccupied with whether or not they could, they didn't stop to think if
-      they should.
-    </p>
-    <p>
-      Must go faster... go, go, go, go, go! Hey, you know how I'm, like, always
-      trying to save the planet? Here's my chance. Jaguar shark! So tell me -
-      does it really exist? Did he just throw my cat out of the window? We gotta
-      burn the rain forest, dump toxic waste, pollute the air, and rip up the
-      OZONE! 'Cause maybe if we screw up this planet enough, they won't want it
-      anymore!
-    </p>
-    <p>
-      Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean
-      breaks down, the pirates don’t eat the tourists. Did he just throw my cat
-      out of the window? Yeah, but your scientists were so preoccupied with
-      whether or not they could, they didn't stop to think if they should.
-    </p>
+const PageContent = ({ heroImage, className, content }) => (
+  <div className={className}>
+    <HeroHeader heroImage={heroImage} content={content.who.heading} />
+    <div className="page-content">
+      {content.who.bodyText.map((text, index) => (
+        <p key={index}>{text}</p>
+      ))}
+    </div>
   </div>
 );
 
-const WhoWeArePage = () => (
+const StyledPageContent = styled(PageContent)`
+  border: '1px solid #ccc';
+`;
+
+const WhoWeArePage = ({ data, content }) => (
   <PageLayout>
-    <PageContent />
+    <StyledPageContent
+      heroImage={data.file.childImageSharp.fluid}
+      content={content}
+    />
   </PageLayout>
 );
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "hero-who-we-are.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`;
 
 export default WhoWeArePage;

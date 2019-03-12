@@ -1,5 +1,6 @@
 const ContextContent = {
   company: 'Acme Industries',
+  phone: '317.831.8474',
   home: {
     bodyText: [
       `Spicy jalapeno bacon ipsum dolor amet salami prosciutto pig jowl
