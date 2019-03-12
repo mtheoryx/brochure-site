@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const BasePhoneNumber = ({ classname, phone }) => (
   <div className="className">
-    <a href="">{phone}</a>
+    <a href={`tel:+${phone}`}>{phone}</a>
   </div>
 );
 
