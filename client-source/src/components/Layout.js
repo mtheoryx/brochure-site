@@ -9,17 +9,17 @@ import DataContext from '../data/data-content';
 const isStream = process.env.GATSBY_IS_STREAM === 'true';
 const content = isStream ? StreamContext : DataContext;
 
-const StyledLayout = styled.div`
-  margin: 0 auto;
-  width: 98vw;
-`;
-
-const PageLayout = ({ children }) => (
-  <StyledLayout content={content}>
+const BaseLayout = ({ children, className }) => (
+  <div content={content} className={className}>
     <Header content={content} />
     {React.cloneElement(children, { content })}
     <Footer />
-  </StyledLayout>
+  </div>
 );
+
+const PageLayout = styled(BaseLayout)`
+  margin: 0 auto;
+  width: 98vw;
+`;
 
 export default PageLayout;
