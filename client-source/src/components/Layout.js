@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
 
 import StreamContext from '../data/stream-content';
 import DataContext from '../data/data-content';
@@ -13,7 +13,7 @@ const BaseLayout = ({ children, className }) => (
   <div content={content} className={className}>
     <Header content={content} />
     {React.cloneElement(children, { content })}
-    <Footer />
+    <Footer content={content.footer} />
   </div>
 );
 
