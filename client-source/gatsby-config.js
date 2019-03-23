@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: `in-stl-static-site-bucket`
+        bucketName: `${isStream ? 'in-stl-dev-static-site-bucket' : 'in-stl-static-site-bucket'}`
       }
     }
   ]

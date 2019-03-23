@@ -38,6 +38,7 @@
     "start:stream": "cross-env GATSBY_IS_STREAM='true' npm run develop",
     "serve": "gatsby serve",
     "deploy": "gatsby-plugin-s3 deploy",
+    "deploy:stream": "cross-env GATSBY_IS_STREAM='true' gatsby-plugin-s3 deploy",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "sync:images": "node ./src/image-sync",
     "storybook": "start-storybook -p 6006",
