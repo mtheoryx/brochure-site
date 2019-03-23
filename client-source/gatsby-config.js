@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typography`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: `in-stl-static-site-bucket`
+      }
+    }
   ]
 };
