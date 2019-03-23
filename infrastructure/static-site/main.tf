@@ -1,8 +1,22 @@
 # Create a logging bucket for the static site access
+resource "aws_s3_bucket" "in-stl-static-site-bucket-logs" {
+  bucket = "${var.app-name}-static-site-bucket-logs"
+  acl    = "log-delivery-write"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+
+  tags {
+    Name    = "${var.app-name} Static Site Bucket Logs"
+    Managed = "${var.managed}"
+    Purpose = "Logging"
+  }
+}
 
 # Create an S3 bucket
 resource "aws_s3_bucket" "in-stl-static-site-bucket" {
-  bucket = "in-stl-static-site-bucket"
+  bucket = "${var.app-name}-static-site-bucket"
   acl    = "public-read"
 
   lifecycle {
@@ -13,9 +27,14 @@ resource "aws_s3_bucket" "in-stl-static-site-bucket" {
     enabled = true
   }
 
+  logging {
+    target_bucket = "${aws_s3_bucket.in-stl-static-site-bucket-logs.bucket}"
+    target_prefix = "${var.app-name}-static-site-bucket/"
+  }
+
   website {
     index_document = "index.html"
-    error_document = "index.html"
+    error_document = "404.html"
   }
 
   server_side_encryption_configuration {
@@ -27,8 +46,9 @@ resource "aws_s3_bucket" "in-stl-static-site-bucket" {
   }
 
   tags {
-    Name    = "Static Site Bucket"
-    Managed = "Terraform v0.11.10"
+    Name    = "${var.app-name} Static Site Bucket"
+    Managed = "${var.managed}"
+    Purpose = "Website"
   }
 }
 
