@@ -27,14 +27,10 @@
 
 ## Assets needed
 
-- [ ] images
-- [ ] logos/icons
-  - [ ] app login icon
-  - [ ] "built with pride" and stars
-  - [ ] facebook
-  - [ ] linkedin
-  - [ ] twitter
-  - [ ] email
-- [  ] body copy
-- [  ] maps (what happens?)
-- [  ] contact form and workflow (serverless email process)
+- [x] images
+- [x] logos/icons
+- [ ] app login icon
+- [x] "built with pride" and stars
+- [x] body copy
+- [ ] maps (what happens?)
+- [ ] contact form and workflow (serverless email process)

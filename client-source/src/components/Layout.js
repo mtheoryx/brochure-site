@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
 
 import StreamContext from '../data/stream-content';
 import DataContext from '../data/data-content';
@@ -9,17 +9,17 @@ import DataContext from '../data/data-content';
 const isStream = process.env.GATSBY_IS_STREAM === 'true';
 const content = isStream ? StreamContext : DataContext;
 
-const StyledLayout = styled.div`
+const BaseLayout = ({ children, className }) => (
+  <div content={content} className={className}>
+    <Header content={content} />
+    {React.cloneElement(children, { content })}
+    <Footer content={content.footer} />
+  </div>
+);
+
+const PageLayout = styled(BaseLayout)`
   margin: 0 auto;
   width: 98vw;
 `;
-
-const PageLayout = ({ children }) => (
-  <StyledLayout content={content}>
-    <Header content={content} />
-    {React.cloneElement(children, { content })}
-    <Footer />
-  </StyledLayout>
-);
 
 export default PageLayout;

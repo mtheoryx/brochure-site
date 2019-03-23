@@ -137,6 +137,9 @@ const ContextContent = {
       out of the window? Yeah, but your scientists were so preoccupied with
       whether or not they could, they didn't stop to think if they should.`
     ]
+  },
+  footer: {
+    address: ['The Industrial Park', '123 Anywhere drive', 'Philly, PA 34567']
   }
 };
 
