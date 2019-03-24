@@ -22,7 +22,7 @@ const StyledPageContent = styled(PageContent)`
 const ContactUsPage = ({ data, content }) => (
   <PageLayout>
     <StyledPageContent
-      heroImage={data.file.childImageSharp.fluid}
+      heroImage={data.header.childImageSharp.fluid}
       content={content}
     />
   </PageLayout>
@@ -30,7 +30,7 @@ const ContactUsPage = ({ data, content }) => (
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "hero-contact.jpg" }) {
+    header: file(relativePath: { eq: "hero-contact.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_noBase64

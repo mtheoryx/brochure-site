@@ -22,7 +22,7 @@ const StyledPageContent = styled(PageContent)`
 const IndexPage = ({ data, content }) => (
   <PageLayout>
     <StyledPageContent
-      heroImage={data.file.childImageSharp.fluid}
+      heroImage={data.header.childImageSharp.fluid}
       content={content}
     />
   </PageLayout>
@@ -30,7 +30,7 @@ const IndexPage = ({ data, content }) => (
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "home-hero.png" }) {
+    header: file(relativePath: { eq: "home-hero.png" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_noBase64
