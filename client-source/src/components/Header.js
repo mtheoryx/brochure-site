@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Logo from './Logo';
 import Navigation from './Navigation';
 import PhoneNumber from './PhoneNumber';
-
-const BaseLogo = ({ className }) => (
-  <div className={className}>Header Logo</div>
-);
-
-// const Logo = styled(BaseLogo)``;
 
 const BaseSiteMeta = ({ className, content }) => (
   <div className={className}>
@@ -33,7 +27,7 @@ const SiteMeta = styled(BaseSiteMeta)`
 
 const BaseHeader = ({ className, content }) => (
   <div className={className}>
-    <BaseLogo />
+    <Logo />
     <SiteMeta content={content} />
   </div>
 );
@@ -42,6 +36,7 @@ const Header = styled(BaseHeader)`
   border: 1px solid red;
   display: flex;
   justify-content: space-between;
+  height: 100px;
 `;
 
 export default Header;
