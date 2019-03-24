@@ -1,3 +1,5 @@
-html {
-  background: rgb(197, 185, 189);
+html,
+body {
+  /* background: rgb(197, 185, 189); */
+  font-size: 13px;
 }
