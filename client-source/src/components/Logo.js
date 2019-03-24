@@ -1,11 +1,14 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const BaseLogo = ({ data, className }) => (
   <div className={className}>
-    <Img fixed={data.logo.childImageSharp.fixed} />
+    <Link to="/">
+      <Img fixed={data.logo.childImageSharp.fixed} />
+    </Link>
   </div>
 );
 

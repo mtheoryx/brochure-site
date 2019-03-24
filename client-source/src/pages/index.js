@@ -30,7 +30,7 @@ const IndexPage = ({ data, content }) => (
 
 export const query = graphql`
   query {
-    header: file(relativePath: { eq: "home-hero.png" }) {
+    header: file(relativePath: { eq: "hero-home.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_noBase64
