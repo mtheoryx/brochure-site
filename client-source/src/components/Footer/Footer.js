@@ -7,8 +7,8 @@ const BaseFooter = ({ className, content }) => (
       <p>Something</p>
     </div>
     <div>
-      {content.address.map(addressLine => (
-        <p>{addressLine}</p>
+      {content.address.map((addressLine, index) => (
+        <p key={index}>{addressLine}</p>
       ))}
     </div>
     <div>
