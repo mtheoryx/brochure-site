@@ -10,7 +10,7 @@ const BaseLogo = ({ data, className }) => (
 );
 
 const Logo = styled(BaseLogo)`
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 export default props => (

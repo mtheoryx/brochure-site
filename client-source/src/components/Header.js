@@ -33,10 +33,10 @@ const BaseHeader = ({ className, content }) => (
 );
 
 const Header = styled(BaseHeader)`
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   height: 100px;
+  margin-bottom: 5px;
 `;
 
 export default Header;
