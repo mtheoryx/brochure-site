@@ -18,10 +18,11 @@ const BaseFooter = ({ className, content }) => (
 );
 
 const Footer = styled(BaseFooter)`
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
+  background-color: #2d2d2d;
   padding: 0 10px;
+  color: white;
   div:nth-child(2) {
     text-align: center;
   }
