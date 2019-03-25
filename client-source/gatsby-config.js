@@ -1,5 +1,4 @@
 const path = require(`path`);
-
 const isStream = process.env.GATSBY_IS_STREAM === 'true';
 
 module.exports = {
@@ -23,7 +22,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: `${isStream ? 'in-stl-dev-static-site-bucket' : 'in-stl-static-site-bucket'}`
+        bucketName: `${
+          isStream
+            ? 'in-stl-dev-static-site-bucket'
+            : 'in-stl-static-site-bucket'
+        }`
       }
     }
   ]
