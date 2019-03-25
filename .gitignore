@@ -183,3 +183,4 @@ $RECYCLE.BIN/
 engineer-notes.md
 .vscode/*
 client-source/src/images/client/*
+client-source/src/data/data-content.js
