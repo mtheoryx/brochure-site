@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 const BaseNavigation = ({ className }) => (
   <nav className={className}>
-    <Link to="/" activeClassName="active">
+    {/* <Link to="/" activeClassName="active">
       Home
-    </Link>
+    </Link> */}
     <Link to="/who-we-are/" activeClassName="active">
       Who we are
     </Link>
