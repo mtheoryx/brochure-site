@@ -22,7 +22,7 @@ export default props => (
       query {
         logo: file(relativePath: { eq: "indy_steel_logo.png" }) {
           childImageSharp {
-            fixed {
+            fixed(width: 283) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
